@@ -1,0 +1,264 @@
+/* Reset default margin, padding, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif; /* Example font-family */
+    background-color: #121921; /* Dark background color */
+    color: #fff; /* Text color */
+    margin: 0; /* Ensure no default margin */
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typewriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+}
+
+/* Basic styling for header */
+.header {
+    background-color: #121921; /* Same as body background */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #444; /* Border to visually separate header from body */
+}
+
+.header h1 {
+    margin: 0;
+}
+
+/* Basic styling for navigation */
+.nav {
+    background-color: #121921; /* Same as body background */
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #444; /* Border to visually separate navbar from body */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping of items */
+    position: sticky; /* Make navbar sticky */
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 0;
+}
+
+/* Styling for header image */
+.header-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.header-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-height: 200px; /* Limit the height of the header image */
+}
+
+/* Styling for main content section */
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.content p {
+    line-height: 1.6;
+}
+
+/* Styling for featured playlists section */
+.featured-playlists {
+    margin-top: 20px;
+}
+
+.playlist-grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.playlist-item {
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.playlist-item img {
+    width: 100%;
+    height: 300px; /* Increase image height */
+    object-fit: cover; /* Ensure image covers the container */
+    border-radius: 8px;
+}
+
+.playlist-item span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Styling for featured videos section */
+.featured-videos {
+    background-color: #121921; /* Dark background color */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.featured-videos h2 {
+    color: #fff; /* Text color for section title */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.video-item {
+    text-align: center;
+}
+
+.video-item iframe {
+    border-radius: 8px;
+}
+
+.video-item a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Styling for connect with us section */
+.connect-with-us {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-icons {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-icons li {
+    margin: 0 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.connect-with-us p {
+    color: #ccc; /* Lighter text color for description */
+    margin-top: 10px;
+}
+
+/* Styling for about us section */
+.about-us {
+    background-color: #121921;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.about-us h2 {
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-us img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-height: 150px; /* Adjusted height for smaller screens */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    .playlist-grid, .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .playlist-grid, .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-image img {
+        max-height: 150px; /* Adjusted height for smaller screens */
+    }
+
+    .content, .featured-videos, .about-us, .connect-with-us {
+        padding: 10px;
+    }
+
+    .nav {
+        flex-wrap: wrap; /* Ensure items wrap */
+    }
+}
+
+@media (max-width: 480px) {
+    .playlist-item img {
+        height: auto; /* Adjust height for small screens */
+    }
+
+    .video-item iframe {
+        height: 200px; /* Adjust height for small screens */
+    }
+
+    .social-icons a {
+        font-size: 20px; /* Adjust icon size for small screens */
+    }
+
+    .typewriter h1 {
+        font-size: 17px; /* Adjust font size for smaller screens */
+    }
+
+    .about-us img {
+        max-height: 120px; /* Further reduce image height for very small screens */
+    }
+}
